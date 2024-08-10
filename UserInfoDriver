@@ -1,0 +1,33 @@
+/**
+ *
+ * Program that demonstrates the usage of the UserInfo class.
+ *
+ * Activity 4
+ * @author Alyson Futral - CPSC 1210 - AO1
+ * @version 09/13/2023
+ *
+ */
+public class UserInfoDriver {
+
+    /**
+     * Main method to demonstrate the UserInfo class.
+     * @param args Command line arguments - not used.
+     */
+    public static void main(String[] args) {
+        // Create a UserInfo object for user1
+        UserInfo user1 = new UserInfo("Pat", "Doe");
+        System.out.println("\n" + user1); // Print initial user information
+        user1.setLocation("Auburn");
+        user1.setAge(19);
+        user1.logOn();
+        System.out.println("\n" + user1); // Print updated user information
+
+        // Create a UserInfo object for user2
+        UserInfo user2 = new UserInfo("Sam", "Jones");
+        System.out.println("\n" + user2); // Print initial user information
+        user2.setLocation("Atlanta");
+        user2.setAge(21);
+        user2.logOn();
+        System.out.println("\n" + user2); // Print updated user information
+    }
+}
