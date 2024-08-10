@@ -1,0 +1,96 @@
+/**
+ *
+ * Program that will provide user information.
+ * Activity 4
+ * @author Alyson Futral - CPSC 1210 - AO1
+ * @version 09/13/2023
+ */
+public class UserInfo { // no main method in class
+
+    private String firstName, lastName, location;
+    private int age, status;
+    private static final int STATUS_OFFLINE = 0;
+    private static final int STATUS_ONLINE = 1;
+
+    /**
+     * Constructs a UserInfo object with the given first and last names.
+     * @param firstNameIn of user.
+     * @param lastNameIn of user.
+     */
+    public UserInfo(String firstNameIn, String lastNameIn) {
+        firstName = firstNameIn;
+        lastName = lastNameIn;
+        location = "Not specified";
+        age = 0;
+        status = STATUS_OFFLINE;
+    }
+
+    /**
+     * Returns a string representation of the user information.
+     * @return user information.
+     */
+    public String toString() {
+        String output = "Name: " + firstName + " " + lastName + "\n";
+        output += "Location: " + location + "\n";
+        output += "Age: " + age + "\n";
+        output += "Status: "; // Removed "+ status" to avoid displaying 0 or 1
+        if (status == STATUS_OFFLINE) {
+            output += "Offline";
+        } else {
+            output += "Online";
+        }
+        return output;
+    }
+    
+    /**
+     * Sets the location of the user.
+     * @param locationIn of user.
+     */
+    public void setLocation(String locationIn) {
+        location = locationIn;
+    }
+
+    /**
+     * Sets the age of the user if it is greater than 0.
+     * @param ageIn of user.
+     * @return true if age was set, false otherwise.
+     */
+    public boolean setAge(int ageIn) {
+        boolean isSet = false;
+        if (ageIn > 0) {
+            age = ageIn;
+            isSet = true;
+        }
+        return isSet;
+    }
+
+    /**
+     * Gets the age of the user.
+     * @return age of user.
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * Gets the location of the user.
+     * @return location of user.
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    /**
+     * Sets the status of the user to offline.
+     */
+    public void logOff() {
+        status = STATUS_OFFLINE;
+    }
+
+    /**
+     * Sets the status of the user to online.
+     */
+    public void logOn() {
+        status = STATUS_ONLINE;
+    }
+}
